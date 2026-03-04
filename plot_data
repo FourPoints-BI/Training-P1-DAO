@@ -1,0 +1,15 @@
+## filter op fuel = gasoline & formula = all
+df_filt = df_gas[
+    (df_gas["fuel"] == "gasoline") &
+    (df_gas["formulation"] == "all")
+]
+## sorteer de dataset
+df_filt = df_filt.sort_values("date")
+
+## plot de date en price
+for grade, group in df_filt.groupby("grade"):
+    plt.plot(group["date"], group["price"], label=grade)
+plt.title("Gasonline prices over time")
+plt.xlabel("Date")
+plt.ylabel("Price (USD per gallon)")
+plt.legend(title="Grade")
