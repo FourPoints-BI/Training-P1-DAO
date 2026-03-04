@@ -1,0 +1,4 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+data_url = "https://raw.githubusercontent.com/rfordatascience/tidytuesday/main/data/2025/2025-07-01/weekly_gas_prices.csv"
+df_gas = pd.read_csv(data_url, parse_dates=['date'])
